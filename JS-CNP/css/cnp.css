@@ -1,0 +1,18 @@
+.container {
+	margin: auto;
+	background: #efe6e6;
+	display: flex;
+	flex-direction: column;
+	line-height: 40px;
+}
+
+button {
+	display: block;
+	background: #258822;
+	width: 80px;
+}
+
+.message {
+	color: red;
+	border: 1px solid black;
+}
