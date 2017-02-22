@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		var cnp = document.getElementById('cnp').value;
 		var message = document.getElementById('message');
-		var day = document.getElementById('day')
+		var day = document.getElementById('day');
 		var month = document.getElementById('month');
 		var year = document.getElementById('year');
 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		function validation() {
 			if (cnp.length == 0) {
-				message.innerHTML = "The cnp is empty!"
+				message.innerHTML = "The cnp is empty!";
 				return false;
 			}
 			else {

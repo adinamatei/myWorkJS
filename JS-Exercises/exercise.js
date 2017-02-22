@@ -56,7 +56,7 @@ function splitString(asd) {
 	var asd = asd.split(' ');
 	return asd;
 }
-document.getElementById('splitStr').innerHTML = splitString("Razvan is here !");
+document.getElementById('splitStr').innerHTML = splitString("I have fun programming !");
 
 
 //Factorialize a Number
@@ -252,7 +252,7 @@ function truncateString(str, num) {
 
 	// sum of diagonals
 	function sumDiagonal(arr) {
-		var total = []
+		var total = [];
 		sum = 0;
 		for (var i = 0; i < arr.length; i++) {
 			sum += arr[i][i];

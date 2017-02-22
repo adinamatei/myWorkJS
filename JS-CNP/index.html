@@ -6,6 +6,28 @@
 	<title>Verify CNP</title>
 </head>
 <body>
+	<div>
+		<p>Verify if a SSN (CNP) is valid, based on user’s birthdate:</p>
+		<ul>
+			<li>Add a label and input for SSN</li>
+			<li>Add a label and input for day, month and year (one for each)</li>
+			<li>Add a “Verify” button</li>
+			<li>When clicked, check if:
+				<ul>
+					<li>the SSN field is not empty and has the right format (13 characters)</li>
+					<li>the day, month and year values are not empty</li>
+					<li>the day field is a number between 1-31</li>
+					<li>the month field is a number between 1-12</li>
+					<li>the year is a number between 1-2016</li>
+					<li>the day, month and year match those written in the SSN field</li>
+					<li>pay special attention to the case when the day or month is below 10</li>
+					<li>display a relevant message for the user</li>
+				</ul>	
+			</li>
+
+		</ul>
+
+	</div>
 	<div class="container">
 			<label>CNP <input id="cnp" type="text" name="cnp" placeholder="Your CNP"></label>
 			<label>Day <input id="day" type="number" name="day" min="1" max="31"></label>
