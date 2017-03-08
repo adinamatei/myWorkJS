@@ -4,7 +4,7 @@ function calculateSum() {
     for (var numar=0; numar<1000; numar++) {
 	  	if (numar % 3 === 0 || numar % 5 === 0)  {
 			// sum = sum + numar;
-			// sau
+			// or
 			sum += numar;
 		}
 	}
@@ -42,21 +42,23 @@ document.getElementById('deepSum').innerHTML = deepSum([[1,2], [4,5], [10]]);
 
 // Reverse a string
 function reverseString(str) {
+	var str = document.getElementById("typeString").value;
 	var reverse = '';
 	for(var i = str.length - 1; i >= 0; i--) {
 		reverse += str[i];
 	}
-	return reverse;
+	return document.getElementById('reverse').innerHTML = reverse;
 }
-document.getElementById('reverse').innerHTML = reverseString("hello");
+
 
 
 // Split a string
 function splitString(asd) {
-	var asd = asd.split(' ');
-	return asd;
+	var asd = document.getElementById("typeText").value;
+	asd = asd.split(' ');
+	return document.getElementById('splitStr').innerHTML = asd;
 }
-document.getElementById('splitStr').innerHTML = splitString("I have fun programming !");
+
 
 
 //Factorialize a Number
@@ -70,16 +72,16 @@ function factorialize(num) {
  if (num === 0) {
  	return 1;
  }
- return num * factorialize(num - 1); // recursive function - se apeleaza pe ea insasi
+ return num * factorialize(num - 1); // recursive function 
 }
 document.getElementById('factorial').innerHTML = factorialize(10);
 
 
 //Palindrome function
 function palindrome(str) {
-  str = str.toLowerCase().replace(/[\W_]/g, ''); // modiffy the string with lowercase and ignor the marks
-  for (var i = 0, len =str.length - 1; i < len / 2; i++) { //calculate the string length and i takes value up to half
-  	if (str[i] !== str[len-i]) { //compare if str[0]=str[last], [1]=[last-1], [2]=[last-2]
+  str = str.toLowerCase().replace(/[\W_]/g, ''); 
+  for (var i = 0, len =str.length - 1; i < len / 2; i++) { 
+  	if (str[i] !== str[len-i]) { 
   		return false;
   	}
   }
@@ -194,15 +196,15 @@ function truncateString(str, num) {
 	var num = document.getElementById('truncateNum').value;
 	var str= document.getElementById('truncateStr').innerHTML;
 	var theTruncate = "";
-  for (var i = 0; i < str.length; i++) {
+  	for (var i = 0; i < str.length; i++) {
 
-  	if (str.length > num) {
-  		if (num > 3) {
-  			theTruncate = str.slice(0, num - 3) + ("...");
-  			// return theTruncate + ("...");
-  		}
+  		if (str.length > num) {
+  			if (num > 3) {
+  				theTruncate = str.slice(0, num - 3) + ("...");
+  				// return theTruncate + ("...");
+  			}
 			else {
-				theTruncate = str.slice(0, num) + ("...");
+				theTruncate = ("...");
 				// return theTruncate + ("...");
 			}
 		}
@@ -365,3 +367,23 @@ function primeFactor(num){
 }
 // console.log(primeFactor(600851475143));
 document.getElementById('prime').innerHTML = primeFactor(600851475143);
+
+//Sorting an array
+function sortNumber (array) {
+	var swapped;
+	do {
+		swapped = false;
+		for (var i = 0; i < array.length; i++) {
+			if(array[i] > array[i+1]){
+				var temp = array[i];
+				array[i] = array[i+1];
+				array[i+1] = temp;
+				swapped = true;
+			}
+		}
+	}
+	while(swapped);
+	return array;
+}
+
+document.getElementById("sort").innerHTML = sortNumber([7, 1, 5, 2, 6]);
