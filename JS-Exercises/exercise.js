@@ -1,16 +1,13 @@
 // The multiple of 3 or 5 sum
-function calculateSum() {
+var SumOfNumber = function() {
 	var sum = 0;
     for (var numar=0; numar<1000; numar++) {
-	  	if (numar % 3 === 0 || numar % 5 === 0)  {
-			// sum = sum + numar;
-			// or
+	  	if (numar % 3 === 0 || numar % 5 === 0) {
 			sum += numar;
 		}
 	}
 	return sum;
-}
-document.getElementById('sum').innerHTML = calculateSum();
+};
 
 
 // Even numbers of an array
@@ -23,11 +20,10 @@ function myArray(array) {
   	}
   	return result;
 }
-document.getElementById('even').innerHTML = myArray([2, 7, 6, 9, 8]);
 
 
 // Sum function of an array
-function deepSum(arr) {
+var deepSum = function(arr) {
 	var sum = 0;
 	for (var i = 0; i < arr.length; i++) {
   		var newArray = arr[i];
@@ -36,33 +32,38 @@ function deepSum(arr) {
   		}
 	}
 	return sum;
-}
-document.getElementById('deepSum').innerHTML = deepSum([[1,2], [4,5], [10]]);
+};
 
 
 // Reverse a string
 function reverseString(str) {
-	var str = document.getElementById("typeString").value;
-	var reverse = '';
-	for(var i = str.length - 1; i >= 0; i--) {
-		reverse += str[i];
-	}
-	return document.getElementById('reverse').innerHTML = reverse;
-}
+	document.getElementById('reverseButton').addEventListener("click", reverseAction);
 
+	function reverseAction(){
+		var str = document.getElementById("typeString").value;
+		var reverse = '';
+		for(var i = str.length - 1; i >= 0; i--) {
+			reverse += str[i];
+		}
+		document.getElementById('reverse').innerHTML = reverse;
+	}
+}
 
 
 // Split a string
-function splitString(asd) {
-	var asd = document.getElementById("typeText").value;
-	asd = asd.split(' ');
-	return document.getElementById('splitStr').innerHTML = asd;
+function splitString() {
+	document.getElementById("splitButton").addEventListener("click", splitAction);
+
+	function splitAction(){
+		var asd = document.getElementById("typeText").value;
+		asd = asd.split(' ');
+		document.getElementById('splitStr').innerHTML = asd;
+	}
 }
 
 
-
 //Factorialize a Number
-function factorialize(num) {
+var factorialize = function(num) {
 	// fact = 1
 	// for (var i = 1; i <= num; i++) {
 	// 	fact = fact * i;
@@ -72,77 +73,71 @@ function factorialize(num) {
  if (num === 0) {
  	return 1;
  }
- return num * factorialize(num - 1); // recursive function 
-}
-document.getElementById('factorial').innerHTML = factorialize(10);
+ return num * factorialize(num - 1);
+};
 
 
 //Palindrome function
-function palindrome(str) {
-  str = str.toLowerCase().replace(/[\W_]/g, ''); 
-  for (var i = 0, len =str.length - 1; i < len / 2; i++) { 
-  	if (str[i] !== str[len-i]) { 
-  		return false;
+var palindromeTest = function(str) {
+    str = str.toLowerCase().replace(/[\W_]/g, ''); 
+    for (var i = 0, len =str.length - 1; i < len / 2; i++) { 
+	  	if (str[i] !== str[len-i]) { 
+	  		return false;
+	  	} 	
   	}
-  }
-  return true;
-}
-document.getElementById('palindrome').innerHTML =  palindrome("raCeCar");
+	return true;
+};
 
 
 //Find the Longest Word in a String
-function findLongestWord(str) {
+var findLongestWord = function(str) {
   str = str.split(' ');
-	// console.log(str);
   var wordLength = 0;
   for (var i = 0; i < str.length; i++){
   	if (str[i].length > wordLength) {
   		wordLength = str[i].length;
   	}
   }
-  return wordLength;
-}
-document.getElementById('longestWord').innerHTML = findLongestWord("The quick brown fox jumped over the lazy dog");
+  document.getElementById('longestWord').innerHTML = wordLength;
+};
+
 
 
 //Max and min of an array
-function maxNumber(anArray) {
+var maxNumber = function(anArray) {
 	var max = anArray[0];
 	for (var i = 0; i < anArray.length; i++){
 		if (max < anArray[i]){
 		max = anArray[i];
 		}
 	}
-	return max;
-}
-function minNumber(anArray) {
+	document.getElementById('maximum').innerHTML = max;
+};
+var minNumber = function (anArray) {
 	var min = anArray[0];
 	for (var i = 0; i < anArray.length; i++) {
 		if (min > anArray[i]) {
 			min = anArray[i];
 		}
 	}
-	return min;
-}
-document.getElementById('minMaxNumber').innerHTML = "The max number of the array is: " + maxNumber([2, 6, 9, 3, 1, 4])
-+ ", and the min number of the array is: " + minNumber([2, 6, 9, 3, 1, 4]);
+	document.getElementById('minimum').innerHTML = min;
+};
 
 
 //First letter of each word capitalize
-function titleCase(string) {
+var titleCase = function (string) {
 	var arrStr = string.split(' ');
 	for (var i = 0; i < arrStr.length; i++) {
 		var word = arrStr[i].toLowerCase().split('');
 		word[0] = word[0].toUpperCase();
 		arrStr[i] = word.join('');
 	}
-	return arrStr.join(' ');
-}
-document.getElementById('upperCase').innerHTML = "Capitalized title: " + titleCase("I'm a little tea pot");
+	document.getElementById('upperCase').innerHTML = arrStr.join(' ');
+};
 
 
 //Return largest number in arrays
-function largestOfFour(arr) {
+var largestOfFour = function(arr) {
 	var result = [];
 	for (var i = 0; i < arr.length; i++) {
 		var subArr = arr[i];
@@ -155,9 +150,7 @@ function largestOfFour(arr) {
 		result.push(max);
 	}
 	return result;
-}
-document.getElementById('maxOfArray').innerHTML =largestOfFour([[4, 5, 1, 3],
-[13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+};
 
 
 //Confirm the Ending
@@ -178,52 +171,52 @@ document.getElementById('confirmEnding').innerHTML = confirmEnding("Open sesame"
 
 
 //Repeat a string
-function repeatStringNumTimes(str, num) {
-	var str = document.getElementById('repeatStr').value;
-	var num	= document.getElementById('repeatNum').value;
-	var newStr = "";
-	if (num > 0) {
-		for (var i = 1; i <= num; i++) {
-			newStr += str + " ";
+function repeatStringNumTimes() {
+	document.getElementById('repeatButton').addEventListener('click', repeatAction);
+
+	function repeatAction(){
+		var str = document.getElementById('repeatStr').value;
+		var num	= document.getElementById('repeatNum').value;
+		var newStr = "";
+		if (num > 0) {
+			for (var i = 1; i <= num; i++) {
+				newStr += str + " ";
+			}
 		}
+		document.getElementById('repeatString').innerHTML = newStr;
 	}
-	return document.getElementById('repeatString').innerHTML = newStr;
+
+	return "You must type a string and a number!";
 }
 
 
 //Truncate a string
-function truncateString(str, num) {
-	var num = document.getElementById('truncateNum').value;
-	var str= document.getElementById('truncateStr').innerHTML;
-	var theTruncate = "";
-  	for (var i = 0; i < str.length; i++) {
+function truncateString() {
+	document.getElementById('readTruncate').addEventListener('click', action);
+	
+	function action() {
+		var num = document.getElementById('truncateNum').value;
+		var str= document.getElementById('truncateStr').innerHTML;
+		var theTruncate = "";
+	  	for (var i = 0; i < str.length; i++) {
 
-  		if (str.length > num) {
-  			if (num > 3) {
-  				theTruncate = str.slice(0, num - 3) + ("...");
-  				// return theTruncate + ("...");
-  			}
-			else {
-				theTruncate = ("...");
-				// return theTruncate + ("...");
+			if (num >= 3 && num <= str.length) {
+				theTruncate = str.slice(0, num-3) + ('...');
 			}
-		}
-		else if (num >= str.length) {
-			theTruncate = str;
-			// return thetTruncate;
-		}
-	}
-	// console.log(theTruncate);
-	return document.getElementById('truncate').innerHTML = theTruncate;
+			else {
+				theTruncate = "Please type a number between 3 and 43";
+			}
 
+		}
+		document.getElementById('truncate').innerHTML = theTruncate;
+	}
 }
-// console.log(truncateString("A-tisket a-tasket A green and yellow basket",
-// 10));
+
 
 
 // The matrix
 	//Calculate the sum of matrix
-	function sumMatrix(arr) {
+	var sumMatrix = function(arr) {
 		var sum = 0;
 		for (var i = 0; i < arr.length; i++) {
 			for (var j = 0; j < arr[i].length; j++) {
@@ -231,12 +224,10 @@ function truncateString(str, num) {
 			}
 		}
 		return sum;
-	}
-	// console.log(sumMatrix([[1, 7, 6], [5, 3, 8], [9, 2, 4]]));
-	document.getElementById('theSum').innerHTML = sumMatrix([[1, 7, 6], [5, 3, 8], [9, 2, 4]]);
+	};
 
 	// Sum of columns
-	function sumColumn(arr) {
+	var sumColumn = function(arr) {
 		var rez = [];
 		var sum = 0;
 		var row = arr.length;
@@ -249,11 +240,10 @@ function truncateString(str, num) {
 			sum = 0;
 		}
 		return rez;
-	}
-	document.getElementById('sumOfColumns').innerHTML = sumColumn([[1, 7, 6], [5, 3, 8], [9, 2, 4]]);
+	};
 
 	// sum of diagonals
-	function sumDiagonal(arr) {
+	var sumDiagonal = function(arr) {
 		var total = [];
 		sum = 0;
 		for (var i = 0; i < arr.length; i++) {
@@ -263,17 +253,15 @@ function truncateString(str, num) {
 		sum = 0;
 
 		var row = arr.length;
-		for (var i = row-1, j = 0; i < row, j < row; i--, j++) {
+		for (var i = row - 1, j = 0; i < row, j < row; i--, j++) {
 			sum += arr[i][j];
 		}
 		total.push(sum);
 		return total;
-	}
-	// console.log(sumDiagonal([[1, 7, 6], [5, 3, 8], [9, 2, 4]]));
-	document.getElementById('sumOfDiagonals').innerHTML = sumDiagonal([[1, 7, 6], [5, 3, 8], [9, 2, 4]]);
+	};
 
 	// The sum above and below the diagonal
-	function halfSum(arr){
+	var halfSum = function(arr){
 		var total = [];
 		var sum = 0;
 		for (var i = 0; i < arr.length; i++) {
@@ -285,13 +273,11 @@ function truncateString(str, num) {
 		}
 		// total.push(sum);
 		return sum;
-	}
-	// console.log(halfSum([[1, 7, 6], [5, 3, 8], [9, 2, 4]]));
-	document.getElementById('aboveDiagonal').innerHTML = halfSum([[1, 7, 6], [5, 3, 8], [9, 2, 4]]);
+	};
 
 
 //Even Fibonacci numbers
-function fibonacci() {
+var fibonacciNumbers = function() {
 	var fiboNumber = [1, 2];
 	var i = 2;
 	var sum = 0;
@@ -301,17 +287,13 @@ function fibonacci() {
 		fiboNumber.push(newVal);
 		i++;
 	}
-	// console.log(fiboNumber);
-	// loop over fiboNumber
 	for (i = 0; i < fiboNumber.length; i++) {
 		if (fiboNumber[i] % 2 === 0) {
 			sum += fiboNumber[i];
 		}
 	}
 	return sum;
-}
-// console.log(fibonacci());
-document.getElementById('fibonacci').innerHTML = fibonacci();
+};
 
 //Even Fibonacci numbers 2
 function fibonacci2() {
@@ -366,7 +348,6 @@ function primeFactor(num){
 	return max;
 }
 // console.log(primeFactor(600851475143));
-document.getElementById('prime').innerHTML = primeFactor(600851475143);
 
 //Sorting an array
 function sortNumber (array) {
@@ -386,4 +367,124 @@ function sortNumber (array) {
 	return array;
 }
 
-document.getElementById("sort").innerHTML = sortNumber([7, 1, 5, 2, 6]);
+
+//////********************************
+var renderList = [
+	{
+		id: 'sum',
+		callBack: SumOfNumber,
+		paramList: null
+	},
+	{
+		id: 'even',
+		callBack: myArray,
+		paramList: [2, 7, 6, 9, 8]
+	},
+	{
+		id: 'sumOfArray',
+		callBack: deepSum,
+		paramList: [[1,2], [4,5], [10]]
+	},
+	{
+		id: 'reverse',
+		callBack: reverseString,
+		paramList: null
+	},
+	{
+		id: 'splitStr',
+		callBack: splitString,
+		paramList: null
+	},
+	{
+		id: 'factorial',
+		callBack: factorialize,
+		paramList: 10
+	},
+	{
+		id: 'palindrome',
+		callBack: palindromeTest,
+		paramList: 'raCeCar'
+	},
+	{
+		id: 'longestWord',
+		callBack: findLongestWord,
+		paramList: "The quick brown fox jumped over the lazy dog"
+	},
+	{
+		id: 'upperCase',
+		callBack: titleCase,
+		paramList: "I'm a little tea pot"
+	},
+	{
+		id:'maximum',
+		callBack: maxNumber,
+		paramList: [2, 6, 9, 3, 1, 4]
+	},
+	{
+		id:'minimum',
+		callBack: minNumber,
+		paramList: [2, 6, 9, 3, 1, 4]
+	},
+	{
+		id: 'maxOfArray',
+		callBack: largestOfFour,
+		paramList: [[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]
+	},
+	{
+		id: 'repeatString',
+		callBack: repeatStringNumTimes,
+		paramList: null
+	},
+	{
+		id: 'truncate',
+		callBack: truncateString,
+		paramList: null
+	},
+	{
+		id: 'theSum',
+		callBack: sumMatrix,
+		paramList: [[1, 7, 6], [5, 3, 8], [9, 2, 4]]
+	},
+	{
+		id: 'sumOfColumns',
+		callBack: sumColumn,
+		paramList: [[1, 7, 6], [5, 3, 8], [9, 2, 4]]
+	},
+	{
+		id: 'sumOfDiagonals',
+		callBack: sumDiagonal,
+		paramList: [[1, 7, 6], [5, 3, 8], [9, 2, 4]] 
+	},
+	{
+		id: 'aboveDiagonal',
+		callBack: halfSum,
+		paramList: [[1, 7, 6], [5, 3, 8], [9, 2, 4]]
+	},
+	{
+		id: 'fibonacci',
+		callBack: fibonacciNumbers,
+		paramList: null
+	},
+	{
+		id: 'prime',
+		callBack: primeFactor,
+		paramList: 600851475143
+	},
+	{
+		id: 'sort',
+		callBack: sortNumber,
+		paramList: [7, 1, 5, 2, 6]
+	}
+
+];
+
+(function renderData(list) {
+	for (var i=0; i<list.length;i++) {
+		var elm = list[i];
+		var callback = elm.callBack;
+		var params = elm.paramList;
+		var rezultat = callback(params);
+		var id = elm.id;
+		document.getElementById(id).innerHTML = rezultat;
+	}
+})(renderList);

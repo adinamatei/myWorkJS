@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
   	<title>JS Exercises</title>
 </head>
+
+
 <body>
 
   <div>
@@ -21,7 +23,7 @@
 	<div>
 		<p><b>3. </b>Sum of array of arrays <br>
 			arr = [[1,2], [4,5], [10]] <br>
-			The sum of this array is: <b id="deepSum"></b></p>
+			The sum of this array is: <b id="sumOfArray"></b></p>
 	</div>
 	<hr>
 
@@ -29,7 +31,7 @@
 		<p><b>4. </b>Reverse a string <br>
 			Type a string
 			<input id="typeString" type="text" name="string" placeholder="e.g.: Hello">
-			<button type="button" name="button" onclick = "reverseString()">Click me</button><br>
+			<button id = "reverseButton" type="button" name="button" value="">Click me</button><br>
 			Reverse string: <b id="reverse"></b> 
 		</p>
 	</div>
@@ -39,7 +41,7 @@
 		<p><b>5. </b>Split a string <br>
 			Type some text:
 			<input id="typeText" type="text" name="text" placeholder="e.g.: I have fun programming !">
-			<button type="button" name="button" onclick="splitString()">Click me</button><br>
+			<button id="splitButton" type="button" name="button" value="">Click me</button><br>
 			Answer : <b id="splitStr"></b>
 		</p>
 	</div>
@@ -58,7 +60,7 @@
 			spelled the same way both forward and backward,
 			ignoring punctuation, case, and spacing.<br>
 			The word 'raCeCar' is a palindrome? (true or false)<br>
-			The answer is: <b id="palindrome"></b>
+			The answer is: <b id="palindrome"></b> 
 		</p>
 	</div>
 	<hr>
@@ -75,6 +77,7 @@
 	<div>
 		<p><b>9. </b>Title Case a Sentence <br>
 		Given sentence "I'm a little tea pot"<br>
+		Capitalized title: 
 		<span id="upperCase"></span>
 		</p>
 	</div>
@@ -83,7 +86,9 @@
   <div>
 		<p><b>10. </b>Find the maximum and minimum of an array<br>
 			Given array is [2, 6, 9, 3, 1, 4]; <br>
-			<span id="minMaxNumber"></span>
+			The max number of the array is: 
+			<span id="maximum"></span>, and the min number of the array is: <span id="minimum"></span>
+
 		</p>
 	</div>
 	<hr>
@@ -110,7 +115,7 @@
 			Type a string here
 			<input id="repeatStr" type="text" name="string"> and repeat for
 			<input id="repeatNum" type="text" name="string"> times.<br>
-			<button type="button" name="button" onclick = "repeatStringNumTimes()">Click here</button><br>
+			<button id="repeatButton" type="button" name="button" value = "">Click here</button><br>
 			<span id="repeatString">You must type a string and a number!</span><br>
 		</p>
 	</div>
@@ -121,8 +126,8 @@
 			We have a given string:"<span id="truncateStr">A-tisket a-tasket A green and yellow basket</span>"
 			 and length = 43.<br>
 			Type a number less than string length to see how the string is truncated <br>
-			<input id="truncateNum" type="text" name="name" value><br>
-			<button type="button" name="button" onclick="truncateString()">Click here</button> <br>
+			<input id="truncateNum" type="text" name="name" value=""><br>
+			<button id="readTruncate" type="button" name="button">Click here</button> <br>
 			Truncate string : <b id="truncate"></b>
 		</p>
 	</div>
@@ -170,3 +175,4 @@
 
   <script type="text/javascript" src="exercise.js"></script>
 </body>
+
