@@ -347,7 +347,7 @@ function primeFactor(num){
 	}
 	return max;
 }
-// console.log(primeFactor(600851475143));
+console.log(primeFactor(600851475143));
 
 //Sorting an array
 function sortNumber (array) {
