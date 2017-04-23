@@ -7,11 +7,11 @@ The JS-CNP folder contains a JavaScript problem, that verify if a SSN(CNP) is va
 
 # Object Oriented Programing in JavaScript
 
-For better understand Object Oriented Programing in JavaScript, I have write some code to experimented with most important concepts. Below I have put some examples:
+To better understand Object Oriented Programing in JavaScript, I have experimented with the most important concepts. Here are a few examples:
 
 *Private and Public Properties and Methods
 
-The private propertie (privateName) and method (privateMethod) are available only inside the Employee() constructor, and the public properties (age) and method (setName() and getName()) are available inside and outside the Employee() constructor.
+The private propertie (privateName) and method (privateMethod) are available only inside the Employee() constructor, and the public properties (age) and methods (setName() and getName()), are available both inside and outside the Employee() constructor.
 
 ```javascript
 var Employee = function(name, age) {
@@ -46,7 +46,7 @@ console.log(employee.getName());
 * Encapsulation and Inheritance
 
 The main OOP concepts in JavaScript are: the encapsulation - creating objects, especially with constructor Functions (class in ES6); and the inheritance - allowing objects to inherit properties and methods from the parent object. 
-In example below, I have encapsulated all the functionality for a Student inside the Student Fuction, and each instance of Student can use prototype methods (like changeEmail) and define their own instance properties (like firstName, secondName, email).
+In this example, all the functionality of a Student object is encapsulated  inside the Student constructor, and each instance of Student inherits prototype methods like changeEmail(), averange() etc.
 
 ```javascript
 // Encapsulation and Inheritance
