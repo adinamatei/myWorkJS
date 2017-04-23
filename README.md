@@ -3,15 +3,15 @@
 
 This repository contains some of my practice with JavaScript.
 In JS-Exercises folder I've made some altgorithmic challenges from freecodecamp.com and projecteuler.net. 
-The JS-CNP folder contains a JavaScript problem, that verify if a SSN(CNP) is valid, based on user's birthdate. 
+The JS-CNP folder contains a JavaScript problem, that verify if a SSN(CNP) is valid, based on user's birth date. 
 
-# Object Oriented Programing in JavaScript
+# Object Oriented Programming in JavaScript
 
-To better understand Object Oriented Programing in JavaScript, I have experimented with the most important concepts. Here are a few examples:
+To better understand Object Oriented Programming in JavaScript, I have experimented with the most important concepts. Here are a few examples:
 
 *Private and Public Properties and Methods
 
-The private propertie (privateName) and method (privateMethod) are available only inside the Employee() constructor, and the public properties (age) and methods (setName() and getName()), are available both inside and outside the Employee() constructor.
+The private properties (privateName) and method (privateMethod) are available only inside the Employee() constructor, and the public properties (age) and methods (setName() and getName()), are available both inside and outside the Employee() constructor.
 
 ```javascript
 var Employee = function(name, age) {
@@ -46,7 +46,7 @@ console.log(employee.getName());
 * Encapsulation and Inheritance
 
 The main OOP concepts in JavaScript are: the encapsulation - creating objects, especially with constructor Functions (class in ES6); and the inheritance - allowing objects to inherit properties and methods from the parent object. 
-In this example, all the functionality of a Student object is encapsulated  inside the Student constructor, and each instance of Student inherits prototype methods like changeEmail(), averange() etc.
+In this example, all the functionality of a Student object is encapsulated  inside the Student constructor, and each instance of Student inherits prototype methods like changeEmail(), average() etc.
 
 ```javascript
 // Encapsulation and Inheritance
@@ -55,7 +55,7 @@ var Student = function(firstName, secondName, email){
 	this.firstName = firstName;
 	this.secondName = secondName;
 	this.email = email;
-	this.averangeGrade = [];
+	this.averageGrade = [];
 	this.finalGrade = 0;
 };
 
@@ -65,12 +65,12 @@ Student.prototype = {
 	name: function(){
 		return this.firstName + " " + this.secondName;
 	},
-	averange: function(grade, credits){
+	average: function(grade, credits){
 		var theGradeCalculation = grade * credits;
-		this.averangeGrade.push(theGradeCalculation);	
+		this.averageGrade.push(theGradeCalculation);	
 	},
 	showTheGrades: function(){
-		return this.averangeGrade.join(",");	
+		return this.averageGrade.join(",");	
 	},
 	changeEmail: function(newEmail){
 		this.email = newEmail; 
@@ -82,14 +82,14 @@ Student.prototype = {
 
 //Created intances of the Student object
 var firstStudent = new Student("John", "Brown", "john@gmail.com");
-firstStudent.averange(10, 5);
+firstStudent.average(10, 5);
 firstStudent.changeEmail("john123@gmail.com");
 firstStudent.getMail();
-firstStudent.averange(9, 4);
+firstStudent.average(9, 4);
 console.log("Name: " + firstStudent.name() + "," + " Grades: " + firstStudent.showTheGrades());
 
 var secondStudent = new Student("Tom", "Patterson", "tomprince@mail.com");
-secondStudent.averange(9, 5);
-secondStudent.averange(7, 4);
+secondStudent.average(9, 5);
+secondStudent.average(7, 4);
 console.log("Name: " + secondStudent.name() + "," + " Grades: " + secondStudent.showTheGrades());
 ```

@@ -32,13 +32,12 @@ console.log(employee.getName());
 
 
 // Encapsulation and Inheritance
-
 var Student = function(firstName, secondName, email){
 	// Initialize the instance properties
 	this.firstName = firstName;
 	this.secondName = secondName;
 	this.email = email;
-	this.averangeGrade = [];
+	this.averageGrade = [];
 	this.finalGrade = 0;
 };
 
@@ -48,13 +47,13 @@ Student.prototype = {
 	name: function(){
 		return this.firstName + " " + this.secondName;
 	},
-	averange: function(grade, credits){
+	average: function(grade, credits){
 		var theGradeCalculation = grade * credits;
-		this.averangeGrade.push(theGradeCalculation);
+		this.averageGrade.push(theGradeCalculation);
 		
 	},
 	showTheGrades: function(){
-		return this.averangeGrade.join(",");	
+		return this.averageGrade.join(",");	
 	},
 	changeEmail: function(newEmail){
 		this.email = newEmail; 
@@ -70,14 +69,14 @@ Student.prototype = {
 
 //Created intances of the Student object
 var firstStudent = new Student("John", "Brown", "john@gmail.com");
-firstStudent.averange(10, 5);
+firstStudent.average(10, 5);
 firstStudent.changeEmail("john123@gmail.com");
 firstStudent.getMail();
-firstStudent.averange(9, 4);
+firstStudent.average(9, 4);
 console.log("Name: " + firstStudent.name() + "," + " Grades: " + firstStudent.showTheGrades());
 
 var secondStudent = new Student("Tom", "Patterson", "tomprince@mail.com");
-secondStudent.averange(9, 5);
-secondStudent.averange(7, 4);
+secondStudent.average(9, 5);
+secondStudent.average(7, 4);
 console.log("Name: " + secondStudent.name() + "," + " Grades: " + secondStudent.showTheGrades());
 
