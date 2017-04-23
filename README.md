@@ -13,7 +13,8 @@ For better understand Object Oriented Programing in JavaScript, I have write som
 
 The private propertie (privateName) and method (privateMethod) are available only inside the Employee() constructor, and the public properties (age) and method (setName() and getName()) are available inside and outside the Employee() constructor.
 
-```var Employee = function(name, age) {
+```javascript
+var Employee = function(name, age) {
 	//private propertie
 	var privateName = name;
 	// public properties
@@ -47,7 +48,7 @@ console.log(employee.getName());
 The main OOP concepts in JavaScript are: the encapsulation - creating objects, especially with constructor Functions (class in ES6); and the inheritance - allowing objects to inherit properties and methods from the parent object. 
 In example below, I have encapsulated all the functionality for a Student inside the Student Fuction, and each instance of Student can use prototype methods (like changeEmail) and define their own instance properties (like firstName, secondName, email).
 
-```
+```javascript
 // Encapsulation and Inheritance
 var Student = function(firstName, secondName, email){
 	// Initialize the instance properties
