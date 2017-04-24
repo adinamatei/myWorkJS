@@ -93,3 +93,38 @@ secondStudent.average(9, 5);
 secondStudent.average(7, 4);
 console.log("Name: " + secondStudent.name() + "," + " Grades: " + secondStudent.showTheGrades());
 ```
+
+* Polymorphism
+
+Polymorphism is the ability to call the same methods (.says()) on different objects and have each of them respond in their own way. So calling  animal[i].says() would result in different output for each animal in the array.
+
+```javascript
+//Polymorphism 
+
+var Animal = function() {};
+
+Animal.prototype.says = function() {
+	return "I am an animal"; 
+};
+
+var Dog = function() {};
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.says = function() {
+	return "I am a dog";
+};
+
+var Cat = function() {};
+Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.says = function() {
+	return "I am a cat";
+};
+
+var Horse = function() {};
+Horse.prototype = Object.create(Animal.prototype);
+
+var animal = [new Animal(), new Dog(), new Cat(), new Horse() ];
+
+for (var i = 0; i < animal.length; i++) {
+	console.log(animal[i].says());
+}
+```

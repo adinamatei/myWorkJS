@@ -33,7 +33,7 @@ console.log(employee.getName());
 
 // Encapsulation and Inheritance
 var Student = function(firstName, secondName, email){
-	// Initialize the instance properties
+	
 	this.firstName = firstName;
 	this.secondName = secondName;
 	this.email = email;
@@ -80,3 +80,33 @@ secondStudent.average(9, 5);
 secondStudent.average(7, 4);
 console.log("Name: " + secondStudent.name() + "," + " Grades: " + secondStudent.showTheGrades());
 
+
+
+//Polymorphism 
+
+var Animal = function() {};
+
+Animal.prototype.says = function() {
+	return "I am an animal"; 
+};
+
+var Dog = function() {};
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.says = function() {
+	return "I am a dog";
+};
+
+var Cat = function() {};
+Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.says = function() {
+	return "I am a cat";
+};
+
+var Horse = function() {};
+Horse.prototype = Object.create(Animal.prototype);
+
+var animal = [new Animal(), new Dog(), new Cat(), new Horse() ];
+
+for (var i = 0; i < animal.length; i++) {
+	console.log(animal[i].says());
+}
