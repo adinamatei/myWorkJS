@@ -13,7 +13,7 @@ var Employee = function(name, age) {
 
 	//privileged method
 	this.getName = function(){
-		return privateMethod() + " has " + this.age + " age old.";
+		return privateMethod() + " has " + this.age + " years old.";
 	};
 
 	//public method
@@ -110,3 +110,32 @@ var animal = [new Animal(), new Dog(), new Cat(), new Horse() ];
 for (var i = 0; i < animal.length; i++) {
 	console.log(animal[i].says());
 }
+
+
+
+// Classes and Inheritance in ECMAScript 6  
+
+class People {
+	constructor (name, age) {
+		this.name = name;
+		this.age = age;
+	}
+	getInfo() {
+		return "Hello, my name is " + this.name + " and my age is " + this.age + ".";
+	}
+}
+
+class Person extends People {
+	constructor(name, age, ocupation) {
+		super(name,age);
+		this.ocupation = ocupation;
+	}
+	//override
+	getInfo() {
+		return super.getInfo() + " My ocupation is " + this.ocupation + ".";
+	}
+}
+
+var pers1 = new Person ('John', 30, 'web developer');
+console.log(pers1.name);
+console.log(pers1.getInfo());

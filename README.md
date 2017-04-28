@@ -9,9 +9,9 @@ The JS-CNP folder contains a JavaScript problem, that verify if a SSN(CNP) is va
 
 To better understand Object Oriented Programming in JavaScript, I have experimented with the most important concepts. Here are a few examples:
 
-*Private and Public Properties and Methods
+* Private and Public Properties and Methods
 
-The private properties (privateName) and method (privateMethod) are available only inside the Employee() constructor, and the public properties (age) and methods (setName() and getName()), are available both inside and outside the Employee() constructor.
+The private properties (privateName) and methods (privateMethod) are available only inside the Employee() constructor, and the public properties (age) and methods (setName() and getName()), are available both inside and outside the Employee() constructor.
 
 ```javascript
 var Employee = function(name, age) {
@@ -27,7 +27,7 @@ var Employee = function(name, age) {
 
 	//privileged method
 	this.getName = function(){
-		return privateMethod() + " has " + this.age + " age old.";
+		return privateMethod() + " has " + this.age + " years old.";
 	};
 
 	//public method
@@ -96,7 +96,7 @@ console.log("Name: " + secondStudent.name() + "," + " Grades: " + secondStudent.
 
 * Polymorphism
 
-Polymorphism is the ability to call the same methods (.says()) on different objects and have each of them respond in their own way. So calling  animal[i].says() would result in different output for each animal in the array.
+Polymorphism is the ability to call the same methods (.says()) on different objects and have each of them respond in their own way. So calling  ```animal[i].says()``` would result in different output for each animal in the array.
 
 ```javascript
 //Polymorphism 
@@ -128,3 +128,33 @@ for (var i = 0; i < animal.length; i++) {
 	console.log(animal[i].says());
 }
 ```
+
+* // Classes and Inheritance in ECMAScript 6
+
+```javascript
+class People {
+	constructor (name, age) {
+		this.name = name;
+		this.age = age;
+	}
+	getInfo() {
+		return "Hello, my name is " + this.name + " and my age is " + this.age + ".";
+	}
+}
+
+class Person extends People {
+	constructor(name, age, ocupation) {
+		super(name,age);
+		this.ocupation = ocupation;
+	}
+	//override
+	getInfo() {
+		return super.getInfo() + " My ocupation is " + this.ocupation + ".";
+	}
+}
+
+var pers1 = new Person ('John', 30, 'web developer');
+console.log(pers1.name);
+console.log(pers1.getInfo());
+```
+
