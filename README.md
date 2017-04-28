@@ -129,7 +129,7 @@ for (var i = 0; i < animal.length; i++) {
 }
 ```
 
-* // Classes and Inheritance in ECMAScript 6
+* Classes and Inheritance in ECMAScript 6
 
 ```javascript
 class People {
