@@ -1,3 +1,28 @@
+//Module Pattern
+
+function User () {
+    var username, password;
+
+    function makeLogin(user, pass) {
+    	username = user;
+    	password = pass;
+
+    	console.log("Welcome " + username.toUpperCase() + "!");
+	}
+
+	var publicAPI = {
+    	login: makeLogin
+	};
+
+	return publicAPI;
+}
+//create a 'User' module instance
+var user1 = User();
+
+user1.login("adina", "12classic"); //Welcome ADINA!
+
+
+
 // Private and Public properties and methods
 
 var Employee = function(name, age) {
@@ -139,3 +164,6 @@ class Person extends People {
 var pers1 = new Person ('John', 30, 'web developer');
 console.log(pers1.name);
 console.log(pers1.getInfo());
+
+
+
